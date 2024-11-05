@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize')
 const dotenv = require ("dotenv")
 const ENV = process.env.NODE_ENV || "local"
-dotenv.config({ path: `.env.%{ENV}`})
+dotenv.config({ path: `.env.${ENV}`})
 
 const sequelize = new Sequelize 
 ( 
@@ -11,7 +11,7 @@ const sequelize = new Sequelize
   {host: process.env.DB_HOST,
     port: process.env.DB_PORT,
  dialect: process.env.DB_DIALECT,
-  
+ dialectmodule: require("mysql2")
 })
 
 module.exports = sequelize
