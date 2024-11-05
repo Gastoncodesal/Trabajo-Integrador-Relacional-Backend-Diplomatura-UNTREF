@@ -1,23 +1,19 @@
 const { DataTypes } = require('sequelize')
 const sequelize = require('../config/database')
 
-const Actor = sequelize.define('Actor', {
-  id_actor: {
+const Categoria = sequelize.define('Categoria', {
+  id_categoria: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
-  nombre: {
+  nombre_categoria: {
     type: DataTypes.STRING,
-    allowNull: true
-  },
-  apellido: {
-    type: DataTypes.STRING,
-    allowNull: true
+    allowNull: false
   }
 }, {
-  tableName: 'actores',
+  tableName: 'categorias',
   timestamps: false
 })
 
-module.exports = Actor
+module.exports = Categoria
