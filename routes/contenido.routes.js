@@ -7,6 +7,28 @@ const Generos = require("../models/Generos");
 const Actor = require("../models/actor");
 
 // Ruta para obtener todo el contenido
+/**
+ * @swagger
+ * /contenido:
+ *   get:
+ *     summary: Obtener todos los contenidos
+ *     description: Endpoint para obtener una lista de todos los contenidos en la base de datos.
+ *     responses:
+ *       200:
+ *         description: Respuesta exitosa. Devuelve una lista de contenidos.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Contenido'  # Referencia al esquema Contenido definido en swagger.config.js
+ *       500:
+ *         description: Error en el servidor.
+ *         content:
+ *           application/json:
+ *             example:
+ *               error: No se pudo traer el contenido
+ */
 router.get("/contenido", async (req, res) => {
   try {
     const contenido = await Contenido.findAll();
@@ -18,6 +40,80 @@ router.get("/contenido", async (req, res) => {
 
 
 //ruta para crear contenido
+/**
+ * @swagger
+ * /contenido:
+ *   post:
+ *     summary: Crear nuevo contenido
+ *     description: Endpoint para crear nuevo contenido en la base de datos. Se requiere un array de objetos de contenido.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: array
+ *             items:
+ *               type: object
+ *               properties:
+ *                 id_contenido:
+ *                   type: integer
+ *                   description: ID único del contenido (se puede omitir al crear nuevo).
+ *                   example: 1
+ *                 poster:
+ *                   type: string
+ *                   description: URL del poster del contenido.
+ *                   example: "https://example.com/poster.jpg"
+ *                 trailer_url:
+ *                   type: string
+ *                   description: URL del tráiler del contenido.
+ *                   example: "https://example.com/trailer.mp4"
+ *                 busqueda:
+ *                   type: string
+ *                   description: Texto para búsqueda del contenido.
+ *                   example: "Una historia de aventura"
+ *                 resumen:
+ *                   type: string
+ *                   description: Resumen del contenido.
+ *                   example: "Este es un resumen del contenido."
+ *                 temporadas:
+ *                   type: integer
+ *                   description: Número de temporadas del contenido.
+ *                   example: 3
+ *                 duracion:
+ *                   type: string
+ *                   description: Duración del contenido en minutos.
+ *                   example: "120"
+ *                 reparto:
+ *                   type: string
+ *                   description: Lista de actores del contenido, separados por comas.
+ *                   example: "Actor Uno, Actor Dos"
+ *                 genero:
+ *                   type: string
+ *                   description: Género del contenido.
+ *                   example: "Acción"
+ *                 calificacion:
+ *                   type: number
+ *                   format: float
+ *                   description: Calificación del contenido.
+ *                   example: 8.5
+ *                 titulo:
+ *                   type: string
+ *                   description: Título del contenido.
+ *                   example: "Aventuras en la Selva"
+ *                 categoria:
+ *                   type: string
+ *                   description: Categoría del contenido.
+ *                   example: "Aventura"
+ *     responses:
+ *       201:
+ *         description: Contenido creado exitosamente.
+ *       500:
+ *         description: Error en el servidor.
+ *         content:
+ *           application/json:
+ *             example:
+ *               error: no se pudo crear el contenido
+ */
 router.post("/contenido", async (req, res) => {
   try {
     if (!Array.isArray(req.body)) {
@@ -85,11 +181,11 @@ router.post("/contenido", async (req, res) => {
       actores.forEach(async (actor) => {
         let [nombre, apellido] = actor.trim().split(" ");
         let idActor;
-        if (!nombre) { 
+        if (!nombre) {
           nombre = "";
         }
-        if (!apellido) { 
-        apellido = "";
+        if (!apellido) {
+          apellido = "";
         }
         const actordb = await Actor.findOne({
           where: { nombre: nombre, apellido: apellido },
