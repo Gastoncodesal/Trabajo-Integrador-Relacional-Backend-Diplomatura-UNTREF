@@ -1,7 +1,7 @@
 {
   "name": "integrador-2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start:local": "cross-env NODE_ENV=local node server.js",
     "start:local_railway": "cross-env NODE_ENV=local_railway node server.js",
