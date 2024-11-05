@@ -15,8 +15,8 @@ POST http://localhost:3000/actors
 Content-Type: application/json
 
 {
-  "nombre": "Tom2",
-  "apellido": "Hanks2"
+  "nombre": "Lionel",
+  "apellido": "Messi"
 }
 
 ###
@@ -67,11 +67,9 @@ Content-Type: application/json
   "trailer": "https://www.youtube.com/embed/aOC8E8z_ifw"
 }
 
-
 ###
-
-# eliminar por id
-DELETE  http://localhost:3000/eliminar/3
+# filtrar por genero, categoria o titulo
+GET http://localhost:3000/contenido/buscar?categoria=pelicula
 
 ###
 
@@ -79,6 +77,8 @@ DELETE  http://localhost:3000/eliminar/3
 GET http://localhost:3000/contenido/5
 
 ###
-# filtrar por genero, categoria o titulo
-GET http://localhost:3000/contenido/buscar?categoria=pelicula
+
+# eliminar por id
+DELETE  http://localhost:3000/eliminar/3
+
 
