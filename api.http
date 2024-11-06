@@ -56,14 +56,14 @@ Content-Type: application/json
 {
   "id": 17,
   "poster": "./posters/4.jpg",
-  "titulo": "The Umbrella Academy",
+  "titulo": "",
   "categoria": "Serie",
   "genero": "Sci-Fi, Fantasía, Acción",
   "gen": "Ciencia Ficción",
-  "busqueda": "The Mandalorian, Sci-Fi, Fantasía, Suspenso, Pedro Pascal, Carl Weathers, Misty Rosas, Chris Bartlett, Rio Hackford, Giancarlo Esposito",
-  "resumen": "Ambientada tras la caída del Imperio y antes de la aparición de la Primera Orden, la Serie sigue los pasos de un pistolero solitario en las aventuras que protagoniza en los confines de la galaxia, donde no alcanza la autoridad de la Nueva República.",
+  "busqueda": "",
+  "resumen": "",
   "temporadas": 2,
-  "reparto": "Pedro Pascal, Carl Weathers, Misty Rosas, Chris Bartlett, Rio Hackford, Giancarlo Esposito",
+  "reparto": "",
   "trailer": "https://www.youtube.com/embed/aOC8E8z_ifw"
 }
 
