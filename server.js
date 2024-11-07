@@ -5,7 +5,7 @@ const RTactores = require('./routes/actores.routes')
 const RTid = require('./routes/id.routes')
 const RTfiltrar = require('./routes/filtrar.routes')
 const bodyParser = require('body-parser')
-const { swaggerUi, swaggerDocs } = require('./swagger config/swagger.confg')
+const { swaggerUi, swaggerDocs } = require('./swaggerconfig/swagger.confg')
 
 const app = express()
 const port = 3000
