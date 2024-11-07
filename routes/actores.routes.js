@@ -58,11 +58,11 @@ router.get('/actors', async (req, res) => {
 *               nombre:
 *                 type: string
 *                 description: Nombre del actor.
-*                 example: "Juan"
+*                 example: "Lionel"
 *               apellido:
 *                 type: string
 *                 description: Apellido del actor.
-*                 example: "Pérez"
+*                 example: "Messi"
 *     responses:
 *       201:
 *         description: Actor creado exitosamente.
