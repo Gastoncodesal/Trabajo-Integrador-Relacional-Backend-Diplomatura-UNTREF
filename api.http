@@ -32,9 +32,9 @@ Content-Type: application/json
 
 [
   {
-    "id": 3,
+    
     "poster": "./posters/36.jpg",
-    "titulo": "JOBS: La Vida De Steve Jobs",
+    "titulo": "la vida de un tuerto",
     "categoria": "Película",
     "gen": "Suceso Real",
     "genero": "Drama, Historia, Tecnología",
@@ -42,7 +42,7 @@ Content-Type: application/json
     "resumen": "Sólo hace falta una persona para empezar una revolución. Jobs es la extraordinaria historia de Steve Jobs, el original innovador y emprendedor que no dejó que nada se interpusiera en su camino hacia la grandeza. La película cuenta la épica y turbulenta historia de Jobs mientras abría un camino que cambió la tecnología - y el mundo - para siempre. Su vida es repasada desde que era adolescente, intentando estudiar en la universidad, hasta el año 2001, cuando el iPod fue presentado al mundo y comenzó a 'allanar' el camino para lo que años después, sería el iPhone.",
     "temporadas": "N/A",
     "duracion": "104 minutos",
-    "reparto": "Ahston Kutcher, Dermot Mulroney, Josh Gad, Lukas Haas, Matthew Modine, J.K. Simmons, Lesley Ann Warren",
+    "reparto": "Ahston Kutcher",
     "trailer": "https://www.youtube.com/embed/FrvkCS0ZGPU"
   },
 ]
@@ -54,31 +54,31 @@ PUT http://localhost:3000/actualizar/17
 Content-Type: application/json
 
 {
-  "id": 17,
+  "id": 11,
   "poster": "./posters/4.jpg",
-  "titulo": "",
+  "titulo": "la nona loca",
   "categoria": "Serie",
   "genero": "Sci-Fi, Fantasía, Acción",
   "gen": "Ciencia Ficción",
   "busqueda": "",
   "resumen": "",
-  "temporadas": 2,
+  "temporadas": 1,
   "reparto": "",
   "trailer": "https://www.youtube.com/embed/aOC8E8z_ifw"
 }
 
 ###
 # filtrar por genero, categoria o titulo
-GET http://localhost:3000/contenido/buscar?categoria=pelicula
+GET http://localhost:3000/contenido/buscar?categoria=Serie
 
 ###
 
 # Traer por id
-GET http://localhost:3000/contenido/5
+GET http://localhost:3000/contenido/15
 
 ###
 
 # eliminar por id
-DELETE  http://localhost:3000/eliminar/3
+DELETE  http://localhost:3000/eliminar/6
 
 
